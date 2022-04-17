@@ -3,12 +3,20 @@
  */
 package effectiveJava;
 
+import effectiveJava.Plant.Genus;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Ivy ivy = (Ivy) Plant.of(Genus.IVY);
+        System.out.println(ivy.getName());
+        System.out.println(ivy.getVineColor());
+
+        Jade jade = (Jade) Plant.of(Genus.JADE);
+        System.out.println(jade.getName());
+        System.out.println(jade.getContainer());
     }
 }
